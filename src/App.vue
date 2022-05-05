@@ -1,6 +1,6 @@
 <template>
   <main>
-    <MarkdownWizard />
+    <MdWizard />
   </main>
 </template>
 

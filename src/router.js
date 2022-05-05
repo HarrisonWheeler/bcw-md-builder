@@ -8,27 +8,17 @@ function loadPage(page) {
 const routes = [
   {
     path: '/',
-    name: 'Home',
-    component: loadPage('HomePage')
-  },
-  {
-    path: '/about',
-    name: 'About',
-    component: loadPage('AboutPage')
-  },
-  {
-    path: '/1',
     name: 'FirstStepPage',
     component: loadPage('FirstStepPage')
   },
   {
-    path: '/2',
+    path: '/1',
     name: 'SecondStepPage',
     component: loadPage('SecondStepPage')
   },
   {
-    path: '/3',
-    name: 'ThirdStepPage',
+    path: '/2',
+    name: 'ThrdStepPage',
     component: loadPage('ThirdStepPage')
   },
   {
