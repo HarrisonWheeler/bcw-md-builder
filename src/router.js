@@ -8,18 +8,8 @@ function loadPage(page) {
 const routes = [
   {
     path: '/',
-    name: 'FirstStepPage',
-    component: loadPage('FirstStepPage')
-  },
-  {
-    path: '/1',
-    name: 'SecondStepPage',
-    component: loadPage('SecondStepPage')
-  },
-  {
-    path: '/2',
-    name: 'ThrdStepPage',
-    component: loadPage('ThirdStepPage')
+    name: 'HomePage',
+    component: loadPage('HomePage')
   },
   {
     path: '/account',

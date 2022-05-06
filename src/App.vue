@@ -1,6 +1,6 @@
 <template>
   <main>
-    <MdWizard />
+    <router-view />
   </main>
 </template>
 

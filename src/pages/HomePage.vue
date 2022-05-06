@@ -1,4 +1,8 @@
-<template></template>
+<template>
+  <div>
+    <MdWizard />
+  </div>
+</template>
 
 <script>
 export default {
