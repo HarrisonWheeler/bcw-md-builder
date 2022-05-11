@@ -9,26 +9,43 @@
             </div>
           </div>
           <div class="row p-2 justify-content-center h-75">
-            <FormBuilder :currentStep="currentStep" />
+            <div class="col-md-8 current-step text-center">
+              <h4>What are you building today?</h4>
+              <form>
+                <select
+                  name="formType"
+                  id="formType"
+                  class="form-control mt-3"
+                  v-model="formType"
+                >
+                  <option disabled selected>Choose one....</option>
+                  <option value="outline">Outline</option>
+                  <option value="assignment">Assignment</option>
+                  <option value="checkpoint">Checkpoint</option>
+                </select>
+              </form>
+            </div>
+            <FormBuilder :formType="formType" />
           </div>
-          <div class="row justify-content-end mt-auto">
+          <!-- TODO do i really need to have steps here? -->
+          <!-- <div class="row justify-content-end mt-auto">
             <div class="col-md-3 offset-md-8">
               <div class="d-flex">
                 <button
                   class="btn btn-danger square-right"
-                  @click="currentStep--"
+                  @click="modifyStep('decrease')"
                 >
                   Previous
                 </button>
                 <button
                   class="btn btn-success square-left"
-                  @click="currentStep++"
+                  @click="modifyStep('increase')"
                 >
                   Next
                 </button>
               </div>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
@@ -40,9 +57,19 @@
 import { ref } from "@vue/reactivity";
 export default {
   setup() {
-    const currentStep = ref(0);
+    let currentStep = ref(0);
+    const formType = ref("");
     return {
       currentStep,
+      formType,
+      // modifyStep(modification) {
+      //   if (modification == "increase") {
+      //     currentStep.value++;
+      //   } else {
+      //     currentStep.value--;
+      //   }
+      //   console.log(currentStep);
+      // },
     };
   },
 };

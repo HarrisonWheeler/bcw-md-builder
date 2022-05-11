@@ -1,40 +1,26 @@
 <template>
   <div class="col-12">
     <div class="row justify-content-center">
-      <div class="col-md-8 current-step text-center">
-        <h4>What are you building today?</h4>
-        <form>
-          <select
-            name="formType"
-            id="formType"
-            class="form-control mt-3"
-            v-model="formType"
-          >
-            <option disabled selected>Choose one....</option>
-            <option value="outline">Outline</option>
-            <option value="assignment">Assignment</option>
-            <option value="checkpoint">Checkpoint</option>
-          </select>
-        </form>
+      <div v-if="formType == 'outline'">
+        {{ outlineSchema }}
       </div>
-      <!-- TODO come back and dial in styling later -->
     </div>
   </div>
 </template>
 
 
 <script>
-import { ref } from "@vue/reactivity";
+import { computed } from "@vue/reactivity";
+import { Outline } from "../models/Outline";
 export default {
   props: {
-    currentStep: {
-      type: Number,
+    formType: {
+      type: String,
     },
   },
   setup() {
-    const formType = ref("");
     return {
-      formType,
+      outlineSchema: computed(() => new Outline()),
     };
   },
 };
