@@ -1,9 +1,7 @@
 <template>
-  <div class="col-12">
+  <div class="col-12 mt-3">
     <div class="row justify-content-center">
-      <div v-if="formType == 'outline'">
-        {{ outlineSchema }}
-      </div>
+      <Outline :outline="outlineSchema" v-if="formType == 'outline'" />
     </div>
   </div>
 </template>
